@@ -164,7 +164,7 @@ decodeRT1000<-function(debug){
 
 getCSVType <- function(csvDF){
   case_when(
-    "AccelX..m.s.." %in% colnames(csvDF) ~ "RT",
+    "AccelX..m.s.." %in% colnames(csvDF) | "AccelX..m.s." %in% colnames(csvDF) ~ "RT",
     "accX.4." %in% colnames(csvDF) ~ "DW2",
     "accX.3." %in% colnames(csvDF) ~ "DW1",
     "acc.axis.X" %in% colnames(csvDF) ~ "DWB",
